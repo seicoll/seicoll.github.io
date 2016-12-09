@@ -1,12 +1,12 @@
 # main links
 main:
   - title: "DAW - M07 - Desenvolupament web entorn servidor"
-    url: /DAW-M07-UF1-Apunts/
+    url: /DAW-M07/DAW-M07-UF1-Apunts/
   # - title: "About"
   #   url: https://mmistakes.github.io/minimal-mistakes/about/
   # - title: "Sample Posts"
   #   url: /year-archive/
   # - title: "Sample Collections"
   #   url: /collection-archive/
-  # - title: "Sitemap"
-  #   url: /sitemap/
+  - title: "Sitemap"
+    url: /sitemap/
