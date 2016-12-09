@@ -135,6 +135,7 @@ print "<h2>PHP is Fun!</h2>";
 <!-- *template: invert -->
 
 # Programació bàsica
+
 ## Variables i operadors
 
 ---
@@ -212,6 +213,7 @@ echo isset($b);		//Mostrarà false perquè la
 ---
 
 ### Operadors
+
 Permeten manipular el valor de les variables, realitzar operacions matemàtiques o comparar-les.
 * Operadors aritmètics: +, -, *, /, % (Mòdul)
 * Operadors d'increment i decrement `++$a` `$a++` `--$a` `$a--`
@@ -544,6 +546,7 @@ setcookie("user", "sergi", time() + (30 * 24 * 3600));
 ---
 
 ### Recuperar cookies
+
 * Per recuperar els valors desats en **cookies** s'utilitzar l'array associatiu `$_COOKIE["nom_cookie"]`
 
 ```php
@@ -558,6 +561,7 @@ if(!isset($_COOKIE["user"])) {
 
 ---
 ### Sessions
+
 * PHP proporciona un altre mecanisme per mantenir la sessió : les **variables de sessió**.
 * Són variables que estan disponibles a qualsevol lloc dels scripts i en totes les pàgines **mentre la sessió no s'acabi**. Un sessió es tanca quan:
   * L'usuari no tanqui el navegador.
@@ -567,6 +571,7 @@ if(!isset($_COOKIE["user"])) {
 ---
 
 ### Creació de la sessió
+
 pagina1.php
 ```html
 <?php
@@ -589,6 +594,7 @@ echo "Session variables are set.";
 ---
 
 ### Recuperació variables de sessió
+
 pagina2.php
 ```html
 <?php
