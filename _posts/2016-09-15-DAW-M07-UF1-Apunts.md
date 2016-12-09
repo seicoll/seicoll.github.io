@@ -340,7 +340,9 @@ $valor = array_pop($a);
 ### Declaració Arrays multidimensionals
 
 * Podem declarar arrays de **qualsevol dimensió**.
+
 ```php
+<?php
 //DECLARACIÓ ARRAY DUES DIMENSIONS
 $ciutat1 = [20, 22, 18];
 $ciutat2 = [25, 29, 23];
@@ -350,12 +352,15 @@ $temperatures = [$ciutat1,$ciutat2,$ciutat3];
 
 //DECLARACIÓ ABREUJADA
 $temperatures = array(array(20, 22, 18),array(25, 29, 23),array(15, 19, 15));
+?>
 ```
 
 ```php
+<?php
 //Accés a les dades
 $temperatures[0][2]			//Retorna 18
 $temperatures[2][1]			//Retorna 19
+?>
 ```
 
 ---
@@ -425,21 +430,23 @@ do {
 ### SWITCH
 
 ```php
-switch ($variable) {
-    case valor1:
-        //codi a executar si $variable==valor1;
-        break;
-    case valor2:
-        //codi a executar si $variable==valor2;
-        break;
-    case valor3:
-        //codi a executar si $variable==valor3;
-        break;
-    ...
-    default:
-        //codi a executar si $variable és diferent
-        //a tots els valors;
-}
+<?php
+	switch ($variable) {
+	    case valor1:
+	        //codi a executar si $variable==valor1;
+	        break;
+	    case valor2:
+	        //codi a executar si $variable==valor2;
+	        break;
+	    case valor3:
+	        //codi a executar si $variable==valor3;
+	        break;
+	    ...
+	    default:
+	        //codi a executar si $variable és diferent
+	        //a tots els valors;
+	}
+?>
 ```
 
 ---
@@ -460,21 +467,25 @@ switch ($variable) {
     <input type="submit" value="Enviar">
 </form>
 ```
+
 * **method**: indica la forma d'enviament de la informació (POST o GET).
 * **action**: indica el fitxer on s'enviaran les dades
 * **name**: per cada camp del formulari indica el nom que l'identifica i que ens permetrà recuperar el valor introduït.
+
 ---
 
 ### Formularis. Processament
 
 *  La pàgina destí rebrà un **array associatiu** (`$_REQUEST, $_POST o $_GET`) del qual el **name** del camp serà una **clau** que contidrà el **valor** entrat al formulari.
 * El fitxer que recollirà la informació `processa.php` pot contenir el següent:
+
 ```php
-<? php
-    $nom = $_REQUEST['nom'];  //Obtenim el nom introduït
-    echo "Hola, $nom!";       //Mostrem una salutació
-?>
+	<? php
+	    $nom = $_REQUEST['nom'];  //Obtenim el nom introduït
+	    echo "Hola, $nom!";       //Mostrem una salutació
+	?>
 ```
+
 * Obtenim el valor entrat al formulari a partir de l'array associatiu `$_REQUEST` i indicant la clau **nom**.
 
 ---
@@ -545,8 +556,8 @@ setcookie(name, value, expire)
 
 ```php
 <? php
-setcookie("user", "sergi", time() + (30 * 24 * 3600));
-// Expiració = 30 dies (30d * 24h * 3600s)
+	setcookie("user", "sergi", time() + (30 * 24 * 3600));
+	// Expiració = 30 dies (30d * 24h * 3600s)
 ?>
 ```
 * **Important!!!** quan volguem enviar una cookie hem de començar el codi php just al començament del fitxer, abans de qualsevol etiqueta html o espai en blanc.
@@ -559,11 +570,11 @@ setcookie("user", "sergi", time() + (30 * 24 * 3600));
 
 ```php
 <?php
-if(!isset($_COOKIE["user"])) {
-    echo "La cookie amb nom 'user' no existeix!";
-} else {
-    echo "Benvingut " . $_COOKIE["user"];
-}
+	if(!isset($_COOKIE["user"])) {
+	    echo "La cookie amb nom 'user' no existeix!";
+	} else {
+	    echo "Benvingut " . $_COOKIE["user"];
+	}
 ?>
 ```
 
@@ -581,7 +592,8 @@ if(!isset($_COOKIE["user"])) {
 ### Creació de la sessió
 
 pagina1.php
-```html
+
+```php
 <?php
 // Start the session
 session_start();
@@ -589,12 +601,12 @@ session_start();
 <!DOCTYPE html>
 <html>
 <body>
-<?php
-// Set session variables
-$_SESSION["favcolor"] = "green";
-$_SESSION["favanimal"] = "cat";
-echo "Session variables are set.";
-?>
+	<?php
+	// Set session variables
+	$_SESSION["favcolor"] = "green";
+	$_SESSION["favanimal"] = "cat";
+	echo "Session variables are set.";
+	?>
 </body>
 </html>
 ```
@@ -604,7 +616,8 @@ echo "Session variables are set.";
 ### Recuperació variables de sessió
 
 pagina2.php
-```html
+
+```php
 <?php
 // Restart de session
 session_start();
@@ -612,11 +625,11 @@ session_start();
 <!DOCTYPE html>
 <html>
 <body>
-<?php
-// Echo session variables that were set on previous page
-echo "Favorite color is " . $_SESSION["favcolor"] . ".<br>";
-echo "Favorite animal is " . $_SESSION["favanimal"] . ".";
-?>
+	<?php
+	// Echo session variables that were set on previous page
+	echo "Favorite color is " . $_SESSION["favcolor"] . ".<br>";
+	echo "Favorite animal is " . $_SESSION["favanimal"] . ".";
+	?>
 </body>
 </html>
 ```
