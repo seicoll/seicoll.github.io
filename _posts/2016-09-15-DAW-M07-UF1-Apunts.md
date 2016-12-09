@@ -167,7 +167,6 @@ print "<h2>PHP is Fun!</h2>";
 ### Variables
 
 * En PHP les variables comencen amb el símbol de `$`
-
 * PHP distingeix entre majúscules i minúscules. Les variables `$persona` i `$Persona` són diferents.
 * **No cal declarar les variables.**
 * **No cal definir el seu tipus.**
@@ -175,10 +174,10 @@ print "<h2>PHP is Fun!</h2>";
 
 ```php
 <?php
-$nom="Sergi";		//Variable de tipus String
-$edat=35;		//Variable de tipus Integer
-$pes=61.5;		//Variable de tipus Float
-$casat=true;		//Variable de tipus Boolea
+	$nom="Sergi";		//Variable de tipus String
+	$edat=35;		//Variable de tipus Integer
+	$pes=61.5;		//Variable de tipus Float
+	$casat=true;		//Variable de tipus Boolea
 ?>
 ```
 
@@ -189,17 +188,17 @@ $casat=true;		//Variable de tipus Boolea
 
 ```php
 <?php
-$nomPersona = "Àlex";
-$edat = "35";
-// la variable edat és de tipus string
+	$nomPersona = "Àlex";
+	$edat = "35";
+	// la variable edat és de tipus string
 
-echo "$nomPersona té $edat anys<br>";
+	echo "$nomPersona té $edat anys<br>";
 
-$edat = 34;
-//Ara la variable edat és de tipus integer:
+	$edat = 34;
+	//Ara la variable edat és de tipus integer:
 
-$edat++;
-echo "$nomPersona té $edat anys";
+	$edat++;
+	echo "$nomPersona té $edat anys";
 ?>
 ```
 
@@ -213,13 +212,13 @@ echo "$nomPersona té $edat anys";
 
 ```php
 <?php
-$a = "10";
-echo gettype($a); 	//Mostrarà String
-settype($a,"integer");  //Convertim el string a number
-echo gettype ($a);	//Mostrarà integer
-settype($a,"number");	//Convertim el string a number
-echo isset($b);		//Mostrarà false perquè la
-			//variable no s'ha inicialitzat  
+	$a = "10";
+	echo gettype($a); 	//Mostrarà String
+	settype($a,"integer");  //Convertim el string a number
+	echo gettype ($a);	//Mostrarà integer
+	settype($a,"number");	//Convertim el string a number
+	echo isset($b);		//Mostrarà false perquè la
+				//variable no s'ha inicialitzat  
 ?>      
 ```
 ---
@@ -231,7 +230,7 @@ Permeten manipular el valor de les variables, realitzar operacions matemàtiques
 * Operadors aritmètics: +, -, *, /, % (Mòdul)
 * Operadors d'increment i decrement `++$a` `$a++` `--$a` `$a--`
 * Operadors d’assignació: =, +=, -=, .=
-* Operadors de cadenes: **.** `"Hola" . "Món"`
+* Operadors de cadenes: . `"Hola" . "Món"`
 * Operadors lògics: !(NEGACIÓ), && (AND), || (OR)
 * Operadors condicionals: ==, !=, >, <, >=, <=
 
@@ -254,15 +253,17 @@ Permeten manipular el valor de les variables, realitzar operacions matemàtiques
 ### Declaració d'un Array
 
 ```php
-//Declaració amb constructor
-$colors=array("verd","groc","vermell");
-$colors=array(1=>"verd", 2=>groc, 3=>"vermell");
+<?php
+	//Declaració amb constructor
+	$colors=array("verd","groc","vermell");
+	$colors=array(1=>"verd", 2=>groc, 3=>"vermell");
 
-//Declaració explícita
-$color[1]="verd";
-$color[2]="groc";
-$color[]="vermell";	//Si no posem índex,
-			//s'assigna a la següent posició.
+	//Declaració explícita
+	$color[1]="verd";
+	$color[2]="groc";
+	$color[]="vermell";	//Si no posem índex,
+				//s'assigna a la següent posició.
+?>
 ```
 
 ---
@@ -272,14 +273,17 @@ $color[]="vermell";	//Si no posem índex,
 * A les caselles dels arrays podem guardar dades de qualsevol tipus.
 * Els array en PHP podem guardar diferents tipus de dades en les caselles d'un mateix array.
 	*  S’anomenen **arrays heterogenis**.
-```php
-a[0] = 1;
-a[1] = "Hola";
-a[2] = 0.75;
-a[3] = true;
 
-//Declaració resumida del array
-$a = array(1, "Hola", 0.75, true);
+```php
+<?php
+	a[0] = 1;
+	a[1] = "Hola";
+	a[2] = 0.75;
+	a[3] = true;
+
+	//Declaració resumida del array
+	$a = array(1, "Hola", 0.75, true);
+?>
 ```
 ---
 
@@ -304,10 +308,13 @@ $a = array("id"=>1,"name"=>"Sayeed","age"=>24);
 
 * **count($a)**: ens diu quants elements té l’array
 * **array_key_exists('clau', $a)**: ens diu si existeix la clau en l'array.
+
 ```php
 array_key_exists('Nom1', $a);	//retorna true
 ```
+
 * **in_array(‘valor', $a)**: ens diu si existeix el valor en l'array.
+
 ```php
 in_array('Maria', $a);	//retorna true
 ```
@@ -325,10 +332,13 @@ in_array('Maria', $a);	//retorna true
 ### Funcions amb Arrays
 
 * **array_push($a,'valor1','valor2')**: afegeix un valor o més al final d'un array.
+
 ```php
 array_push($a,'Dani', 'Raquel');
 ```
+
 * **array_pop($a')**: elimina l'últim element de l'array i retorna el seu valor.
+
 ```php
 $valor = array_pop($a);
 ```
@@ -522,6 +532,7 @@ Característiques del mètode GET:
 ### Formularis: POST
 
 Característiques del mètode POST:
+
 * No hi ha límits en la quantitat d'informació a enviar.
 * Les dades s'afegeixen en el cos de la petició HTTP.
 * Les sol·licitud POST NO es guarden en l'historial del navegador.
@@ -551,6 +562,7 @@ Característiques del mètode POST:
 * Cal que el navegador tingui les **cookies habilitades**.
 
 ---
+
 ### Crear cookies
 
 ```php
@@ -584,6 +596,7 @@ setcookie(name, value, expire)
 ```
 
 ---
+
 ### Sessions
 
 * PHP proporciona un altre mecanisme per mantenir la sessió : les **variables de sessió**.
