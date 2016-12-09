@@ -2,9 +2,23 @@
 
 {% highlight php %}
 <?php
-echo "Today is " . date("Y/m/d") . "<br>";
-echo "Today is " . date("Y.m.d") . "<br>";
-echo "Today is " . date("Y-m-d") . "<br>";
-echo "Today is " . date("l");
+   // Definicions
+   define("PI", 3.1416);
+
+   // mostrem per pantalla
+   echo "<p>El número Pi és " . PI . "</p>";  
+   // enlloc de "PI" es mostrarà "3.1416"
 ?>
 {% endhighlight %}
+
+
+```php
+<?php
+   // Definicions
+   define("PI", 3.1416);
+
+   // mostrem per pantalla
+   echo "<p>El número Pi és " . PI . "</p>";  
+   // enlloc de "PI" es mostrarà "3.1416"
+?>
+```
