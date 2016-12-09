@@ -169,10 +169,12 @@ print "<h2>PHP is Fun!</h2>";
 	* PHP converteix automàticament la variable al tipus correcte depenet del valor assignat.
 
 ```php
+<?php
 $nom="Sergi";		//Variable de tipus String
 $edat=35;		//Variable de tipus Integer
 $pes=61.5;		//Variable de tipus Float
-$casat=true;		//Variable de tipus Boolena
+$casat=true;		//Variable de tipus Boolea
+?>
 ```
 
 ---
@@ -181,6 +183,7 @@ $casat=true;		//Variable de tipus Boolena
 * Exemple canvi de tipus:
 
 ```php
+<?php
 $nomPersona = "Àlex";
 $edat = "35";
 // la variable edat és de tipus string
@@ -192,6 +195,7 @@ $edat = 34;
 
 $edat++;
 echo "$nomPersona té $edat anys";
+?>
 ```
 
 ---
@@ -201,20 +205,24 @@ echo "$nomPersona té $edat anys";
 * **gettype(variable)**: torna el tipus de dada de la variable.
 * **settype(variable,tipus)**: converteix la variable al tipus indicat.
 * **isset(variable)**: indica si la variable s'ha inicialitzat.
+
 ```php
+<?php
 $a = "10";
 echo gettype($a); 	//Mostrarà String
 settype($a,"integer");  //Convertim el string a number
 echo gettype ($a);	//Mostrarà integer
 settype($a,"number");	//Convertim el string a number
 echo isset($b);		//Mostrarà false perquè la
-			//variable no s'ha inicialitzat        
+			//variable no s'ha inicialitzat  
+?>      
 ```
 ---
 
 ### Operadors
 
 Permeten manipular el valor de les variables, realitzar operacions matemàtiques o comparar-les.
+
 * Operadors aritmètics: +, -, *, /, % (Mòdul)
 * Operadors d'increment i decrement `++$a` `$a++` `--$a` `$a--`
 * Operadors d’assignació: =, +=, -=, .=
