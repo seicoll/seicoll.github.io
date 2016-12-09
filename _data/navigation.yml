@@ -2,10 +2,12 @@
 main:
   - title: "DAW - M07 - Desenvolupament web entorn servidor"
     children:
-      - title: "UF1"
+      - title: "UF1. Desenvolupament web en entorn servidor"
         url: /DAW-M07-UF1-Apunts/
       - title: "UF2"
         url: /DAW-M07-UF2-Apunts/
+      - title: "UF3"
+        url: /DAW-M07-UF3-Apunts/
   # - title: "About"
   #   url: https://mmistakes.github.io/minimal-mistakes/about/
   # - title: "Sample Posts"
