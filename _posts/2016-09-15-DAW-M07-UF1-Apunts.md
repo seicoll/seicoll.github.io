@@ -13,6 +13,7 @@ Autor: Sergi Coll
 * De fet, les sigles PHP signifiquen "***PHP: Hypertext Preprocessor"*** (definició recursiva).
 
 Els arxius PHP combinen codi HTML i PHP:
+
 * Els scripts **PHP** són processats per servidor (pot ser l'Apache)
 	* Els scripts PHP són processats per servidor (pot ser l'Apache)
 	* El resultat generat (codi HTML) s'envia al client.
