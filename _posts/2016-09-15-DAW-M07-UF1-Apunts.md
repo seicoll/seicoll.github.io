@@ -1,6 +1,7 @@
 <!-- $theme: gaia -->
 
 # M07. Desenvolupament web en entorn servidor
+
 ## UF1. Desenvolupament web en entorn servidor
 Autor: Sergi Coll
 
@@ -17,6 +18,7 @@ Els arxius PHP combinen codi HTML i PHP:
 	* El resultat generat (codi HTML) s'envia al client.
 
 ---
+
 ## Introducció al Llenguatge PHP
 
 ![php](https://sdz-upload.s3.amazonaws.com/prod/upload/p1ch1_JavaScript%20client%20-%20New%20Page.png)
@@ -32,6 +34,7 @@ Els arxius PHP combinen codi HTML i PHP:
 	* El client **no** rep el codi PHP, només rep el codi HTML generat al servidor.
 
 ---
+
 ## Requisits per a l'ús del llenguatge PHP
 PHP requereix tenir instal·lat:
 * Un programari de servidor que suporti el protocol HTTP i configurat per interactuar amb l'intèrpret PHP.
@@ -39,6 +42,7 @@ PHP requereix tenir instal·lat:
 * Un intèrpret de PHP.
 
 ---
+
 ## Treballant amb Apache i Linux
 
 En Ubuntu o Debian podem instal·lar els paquets necessaris amb:
@@ -89,7 +93,7 @@ El llenguatge php s'insereix en un pàgina HTML.
 ```
 ---
 
-## Comentaris
+### Comentaris
 
 Cal distingir els comentaris en HTML dels PHP.
 ```php
@@ -110,16 +114,18 @@ Cal distingir els comentaris en HTML dels PHP.
 ```
 ---
 
-## Imprimir valors
+### Imprimir valors
 * Tenim dues formes de mostrar valors `echo` i `print`
 * La diferència és que `echo` no retorna cap valor i `print` retorna 1.
 
 echo
+
 ```php
 echo "<h2>PHP is Fun!</h2>";
 ```
 
 print
+
 ```php
 print "<h2>PHP is Fun!</h2>";
 ```
@@ -128,7 +134,7 @@ print "<h2>PHP is Fun!</h2>";
 <!-- *template: invert -->
 
 # Programació bàsica
-## Variables i operados
+## Variables i operadors
 
 ---
 
@@ -187,6 +193,7 @@ echo "$nomPersona té $edat anys";
 ```
 
 ---
+
 ### Funcions pels tipus de variables
 
 * **gettype(variable)**: torna el tipus de dada de la variable.
@@ -219,6 +226,7 @@ Permeten manipular el valor de les variables, realitzar operacions matemàtiques
 # Arrays
 
 ---
+
 ### Arrays
 
 * Els **arrays** són colleccions ordenades d’elements.
@@ -226,6 +234,7 @@ Permeten manipular el valor de les variables, realitzar operacions matemàtiques
 
 
 ---
+
 ### Declaració d'un Array
 
 ```php
@@ -241,6 +250,7 @@ $color[]="vermell";	//Si no posem índex,
 ```
 
 ---
+
 ### Tipus de dades en un array
 
 * A les caselles dels arrays podem guardar dades de qualsevol tipus.
@@ -266,11 +276,12 @@ $a = array(1, "Hola", 0.75, true);
 $a = array("id"=>1,"name"=>"Sayeed","age"=>24);
 ```
 
-![php](http://programmingsphere.com/wp-content/uploads/2015/07/associative-array-in-PHP.jpg) 
+![php](http://programmingsphere.com/wp-content/uploads/2015/07/associative-array-in-PHP.jpg)
 
 **Nota**: Per mostrar els valors d'un array associatiu es pot utilitzar la funció `print_r($a)`
 
 ---
+
 ### Funcions amb Arrays
 
 `$a=array(‘Nom1’=>'Maria’,'Nom2’=>’Joan’,…);`
@@ -286,6 +297,7 @@ in_array('Maria', $a);	//retorna true
 ```
 
 ---
+
 ### Funcions amb Arrays
 
 * **unset($a[‘clau’])**: ens elimina l'element que té la clau indicada
@@ -293,6 +305,7 @@ in_array('Maria', $a);	//retorna true
 * **rsort($a)**: ordena els valors de major a menor.
 
 ---
+
 ### Funcions amb Arrays
 
 * **array_push($a,'valor1','valor2')**: afegeix un valor o més al final d'un array.
@@ -309,13 +322,13 @@ $valor = array_pop($a);
 ### Arrays multidimensionals
 
 * En **PHP**, els tots arrays són de una única dimensió.
-	* Podem crear arrays multidimesionals creant arrays d’arrays, com si els elements de l'array fossin al seu torn altres arrays. 
+	* Podem crear arrays multidimesionals creant arrays d’arrays, com si els elements de l'array fossin al seu torn altres arrays.
 
 ---
 
 ### Declaració Arrays multidimensionals
 
-* Podem declarar arrays de **qualsevol dimensió**. 
+* Podem declarar arrays de **qualsevol dimensió**.
 ```php
 //DECLARACIÓ ARRAY DUES DIMENSIONS
 $ciutat1 = [20, 22, 18];
@@ -438,8 +451,9 @@ switch ($variable) {
 ```
 * **method**: indica la forma d'enviament de la informació (POST o GET).
 * **action**: indica el fitxer on s'enviaran les dades
-* **name**: per cada camp del formulari indica el nom que l'identifica i que ens permetrà recuperar el valor introduït. 
+* **name**: per cada camp del formulari indica el nom que l'identifica i que ens permetrà recuperar el valor introduït.
 ---
+
 ### Formularis. Processament
 
 *  La pàgina destí rebrà un **array associatiu** (`$_REQUEST, $_POST o $_GET`) del qual el **name** del camp serà una **clau** que contidrà el **valor** entrat al formulari.
@@ -460,10 +474,11 @@ switch ($variable) {
 
 	* **POST**:  els valors del formulari es transmeten de manera oculta (no aparèixen a la barra d'adreces del navegador).
 	* **GET**:	els valors aperèixen a l'adreça URL.
-	Per exemple: 
-    `http://localhost/processa.php/nom=jaume&curs=1` 
+	Per exemple:
+    `http://localhost/processa.php/nom=jaume&curs=1`
 
 ---
+
 ### Formularis: GET
 
 Característiques del mètode GET:
@@ -471,11 +486,12 @@ Característiques del mètode GET:
 * Les dades són visibles en la URL.
   * No utilitzar per enviar dades sensibles (com passwords).
 * Té limitació en la quantitat de dades a enviar.
-  * Màxim 2000 caràcters. 
+  * Màxim 2000 caràcters.
 * Les sol·licitud GET es guarden en l'historial del navegador.
 * Les sol·licitud GET  poden ser *bookmarked*.
 
 ---
+
 ### Formularis: POST
 
 Característiques del mètode POST:
@@ -499,6 +515,7 @@ Característiques del mètode POST:
 * Una d'aquestes tècniques són les [**cookies**](http://php.net/manual/es/features.cookies.php).
 
 ---
+
 ### Cookies
 
 * Una *galeta* o ***cookie*** és un fitxer de text de mida limitada que permet guardar localment informacions diverses.
@@ -517,12 +534,14 @@ setcookie(name, value, expire)
 
 ```php
 <? php
-setcookie("user", "sergi", time() + (30 * 24 * 3600)); 
+setcookie("user", "sergi", time() + (30 * 24 * 3600));
 // Expiració = 30 dies (30d * 24h * 3600s)
 ?>
 ```
 * **Important!!!** quan volguem enviar una cookie hem de començar el codi php just al començament del fitxer, abans de qualsevol etiqueta html o espai en blanc.
+
 ---
+
 ### Recuperar cookies
 * Per recuperar els valors desats en **cookies** s'utilitzar l'array associatiu `$_COOKIE["nom_cookie"]`
 
@@ -545,6 +564,7 @@ if(!isset($_COOKIE["user"])) {
 * Les variables de sessió, a diferència de les cookies, **es guarden al servidor**.
 
 ---
+
 ### Creació de la sessió
 pagina1.php
 ```html
@@ -566,6 +586,7 @@ echo "Session variables are set.";
 ```
 
 ---
+
 ### Recuperació variables de sessió
 pagina2.php
 ```html
