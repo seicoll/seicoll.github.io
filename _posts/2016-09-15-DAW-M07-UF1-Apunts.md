@@ -75,6 +75,7 @@ El llenguatge php s'insereix en un pàgina HTML.
 </body>
 </html>
 ```
+
 * Per indicar que incrustem codi PHP cal **obrir amb `<?php`** finalment **tancar amb** `?>`
 * La **instrucció** `echo` imprimeix text a l'arxiu que rep el client (el text va entre cometes dobles).
 * Les **instruccions acaben amb punt i coma ";"** (és molt important!)
@@ -92,11 +93,13 @@ El llenguatge php s'insereix en un pàgina HTML.
 </body>
 </html>
 ```
+
 ---
 
 ### Comentaris
 
 Cal distingir els comentaris en HTML dels PHP.
+
 ```php
 <html>
 <body>
@@ -113,19 +116,21 @@ Cal distingir els comentaris en HTML dels PHP.
 </body>
 </html>
 ```
+
 ---
 
 ### Imprimir valors
+
 * Tenim dues formes de mostrar valors `echo` i `print`
 * La diferència és que `echo` no retorna cap valor i `print` retorna 1.
 
-echo
+**echo**
 
 ```php
 echo "<h2>PHP is Fun!</h2>";
 ```
 
-print
+**print**
 
 ```php
 print "<h2>PHP is Fun!</h2>";
