@@ -2,12 +2,11 @@
 title: "UF2. Laravel"
 permalink: /DAW-M07-UF2-Apunts/
 date: 2017-01-16T03:02:20+00:00
-
 sidebar:
   nav: "docs"
 ---
 
-{% include toc icon="columns" title="Menú " %}
+{% include toc icon="columns" title="Menú" %}
 
 ## Què és Laravel
 
@@ -139,7 +138,7 @@ Documentació [Laravel Homestead](https://laravel.com/docs/5.3/homestead)
 
 ---
 
-## Laravel: Rutes
+## Rutes
 
 * Les **rutes** en Laravel són les responsables d'indic....................
 
@@ -204,7 +203,7 @@ També es poden enviar varis paràmetres:
 ?>
 ```
 
-### Paràmetres opcionals
+### Rutes amb paràmetres opcionals
 
 Podem definir rutes amb paràmetres opcionals com:
 
@@ -227,7 +226,7 @@ En Laravel, el paràmetres opcionals s'indiquen amb un interrogant **?**.
 
 ---
 
-## Laravel: Estructura de carpetes
+## Estructura de carpetes
 
 Alguns dels arxius que tenim directament a la carperta arrel de Laravel són:
 
@@ -249,7 +248,7 @@ Carpetes principals de Laravel:
 
 ---
 
-## Laravel: Vistes
+## Vistes
 
 * Les **vistes** s'encarreguen de mostrar la inforació a l'usuari.
 * Les vistes consisteixen en uns arxius php que generen el codi HTML que s'envia al navegador.
@@ -304,7 +303,7 @@ Per mostrar dades en un arxiu blade, s'utilitzen les dobles claus {{ $data }}
 
 ---
 
-## Laravel: Controladors
+## Controladors
 
 * En Laravel, els **controladors** es guarden a la carpeta `app/Http/Controllers`.
    * I aquí es poden organitzar en subcarpetes.
@@ -346,8 +345,8 @@ Per mostrar dades en un arxiu blade, s'utilitzen les dobles claus {{ $data }}
 
   `php artisan make:controller CategoriasController`
 
-  ---
+---
 
-  ## Laravel: Models
+## Models
 
   http://desarrolloweb.com/articulos/introduccion-modelos-laravel.html
