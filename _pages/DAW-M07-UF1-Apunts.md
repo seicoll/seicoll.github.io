@@ -1,4 +1,10 @@
-<!-- $theme: gaia -->
+---
+title: "M07. Desenvolupament web en entorn servidor"
+permalink: /DAW-M07-UF1-Apunts/
+date: 2016-02-24T03:02:20+00:00
+---
+
+{% include toc icon="columns" title="Included " %}
 
 # M07. Desenvolupament web en entorn servidor
 
