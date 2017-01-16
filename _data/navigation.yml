@@ -1,6 +1,6 @@
 # main links
 main:
-  - title: "DAW - M07 - Desenvolupament web entorn servidor"
+  - title: "DAW - M07. Desenvolupament web entorn servidor"
     children:
       - title: "UF1. Desenvolupament web en entorn servidor"
         url: /DAW_M07_UF1_Apunts/
