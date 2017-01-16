@@ -224,6 +224,8 @@ En Laravel, el paràmetres opcionals s'indiquen amb un interrogant **?**.
 ?>
 ```
 
+> Alerta! Cal posar un valor per defecte als paràmetres opcionals.
+
 ---
 
 ## Estructura de carpetes
@@ -266,7 +268,8 @@ Carpetes principals de Laravel:
 ```php
    <?php
       Route::get('inici', function () {
-          return view('inici');        //cridem la funció view passant el nom de la vista
+         //cridem la funció view passant el nom de la vista
+         return view('inici');        
       });
    ?>
 ```
@@ -293,7 +296,7 @@ Carpetes principals de Laravel:
 <html>
     <body>
       <p>
-          Estàs visualitzant el mes {{$mes}} i l'any {{$any}}.
+          Estàs visualitzant el mes &#123;&#123;$mes&#125;&#125; i l'any &#123;&#123;$any&#125;&#125;.
       </p>
    </body>
 </html>
