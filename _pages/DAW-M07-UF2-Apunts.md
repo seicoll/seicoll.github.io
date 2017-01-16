@@ -2,15 +2,12 @@
 title: "UF2. Laravel"
 permalink: /DAW-M07-UF2-Apunts/
 date: 2017-01-16T03:02:20+00:00
+
+sidebar:
+  nav: "docs"
 ---
 
 {% include toc icon="columns" title="Menú " %}
-
-# M07. Desenvolupament web en entorn servidor
-## UF2. Laravel
-Autor: Sergi Coll
-
----
 
 ## Laravel
 
@@ -18,6 +15,7 @@ Autor: Sergi Coll
 * Utilitza el model **MVC** (Model Vista Controlador).
 * S'aprèn ràpidament.
 * Requereix coneixements de PHP i programació orientacio objectes (POO).
+
 ---
 
 ## Patró MVC
@@ -34,9 +32,9 @@ Autor: Sergi Coll
   * **Vista**: es la encargada de mostrar la información al usuario de forma gráfica.
   * **Controlador**: es el intermediario entre la vista y el modelo. Es quien controla las interacciones del usuario solicitando los datos al modelo y entregándolos a la vista para que ésta, lo presente al usuario.
 
-  ---
+---
 
-  ## MVC: Funcionament
+## MVC: Funcionament
 
 ![Model MCV](imatgesApunts/mvc.png)
 
@@ -49,6 +47,7 @@ Autor: Sergi Coll
 7. El **controlador** configura la **vista** i la retorna al navegador en formato HTML.
 
 ---
+
 ## Requiriments Laravel
 
 * PHP >= 5.6.4
@@ -59,6 +58,7 @@ Autor: Sergi Coll
 * XML PHP Extension
 
  Tots aquest requiriments són satisfets per la màquina virtual [Laravel Homestead](https://laravel.com/docs/5.3/homestead).
+
 ---
 
 ## Homestead
@@ -86,6 +86,7 @@ Autor: Sergi Coll
 * Beanstalkd
 
   Documentació [Laravel Homestead](https://laravel.com/docs/5.3/homestead)
+
 ---
 
 ## Instal·lació i configuració
