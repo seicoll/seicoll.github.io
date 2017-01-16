@@ -6,6 +6,8 @@ main:
     #   url: /year-archive/
     # - title: "Sample Collections"
     #   url: /collection-archive/
+    - title: "DAW - M07. Desenvolupament web entorn servidor"
+      url: /DAW-M07-UF1-Apunts/
      - title: "Sitemap"
        url: /sitemap/
 
