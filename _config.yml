@@ -245,4 +245,4 @@ defaults:
       # share: true
       # related: true
       sidebar:
-         nav: "main"
+         nav: "docs"

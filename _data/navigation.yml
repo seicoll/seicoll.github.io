@@ -1,5 +1,15 @@
 # main links
 main:
+    # - title: "About"
+    #   url: https://mmistakes.github.io/minimal-mistakes/about/
+    # - title: "Sample Posts"
+    #   url: /year-archive/
+    # - title: "Sample Collections"
+    #   url: /collection-archive/
+     - title: "Sitemap"
+       url: /sitemap/
+
+docs:
   - title: "DAW - M07. Desenvolupament web entorn servidor"
     children:
     - title: "UF1. Desenvolupament web en entorn servidor"
@@ -8,12 +18,3 @@ main:
       url: /DAW-M07-UF3-Apunts/
     - title: "UF2. Generació dinàmica de pàgines web - Laravel"
       url: /DAW-M07-UF2-Apunts/
-
-  # - title: "About"
-  #   url: https://mmistakes.github.io/minimal-mistakes/about/
-  # - title: "Sample Posts"
-  #   url: /year-archive/
-  # - title: "Sample Collections"
-  #   url: /collection-archive/
-  # - title: "Sitemap"
-  #   url: /sitemap/
