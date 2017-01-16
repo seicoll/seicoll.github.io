@@ -8,6 +8,8 @@ main:
     #   url: /collection-archive/
     - title: "DAW M07. Desenvolupament web entorn servidor"
       url: /DAW-M07-UF1-Apunts/
+    - title: "Documentació"
+      url: /page-archive/
     - title: "Sitemap"
       url: /sitemap/
 
