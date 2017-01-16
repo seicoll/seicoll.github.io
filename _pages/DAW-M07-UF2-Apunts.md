@@ -293,17 +293,20 @@ Carpetes principals de Laravel:
 * L'arxiu `resources/views/calendari.blade.php` seria:
 
 ```html
+{% raw %}
 <html>
     <body>
       <p>
-          Estàs visualitzant el mes &#123;&#123;$mes&#125;&#125; i l'any &#123;&#123;$any&#125;&#125;.
+          Estàs visualitzant el mes {{$mes}} i l'any {{$any}}.
       </p>
    </body>
 </html>
+{% endraw %}
 ```
 
+{% raw %}
 Per mostrar dades en un arxiu blade, s'utilitzen les dobles claus {{ $data }}
-
+{% endraw %}
 ---
 
 ## Controladors
