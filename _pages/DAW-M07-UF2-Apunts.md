@@ -36,9 +36,6 @@ sidebar:
 ## MVC: Funcionament
 
 ![Model MCV](https://i0.wp.com/www.magarrent.com/wp-content/uploads/2016/12/0-Selection_001.png?fit=964%2C519&ssl=1)
-![Model MCV](assets/dawm07/mvc.png)
-
-![Model MCV]({{ '/assets/images/mm-layout-archive.png' | absolute_url }})
 
 1. L'**usuari** des del navegador accedeix una pàgina web.
 2. Accedim a una **ruta** (ex: /, /usuaris, /registre).
@@ -125,7 +122,7 @@ Documentació [Laravel Homestead](https://laravel.com/docs/5.3/homestead)
 
     `http://localhost:8000`
 
-   ![Laravel homepage](imatgesApunts/laravel-homepage.png)
+   ![Laravel homepage](https://1.bp.blogspot.com/-wtSfsEmfpp4/V8FhLyVaRHI/AAAAAAAACVY/32t7J9PvER8JDpwQ7HpnNJuA0FQb8G4ewCLcB/s1600/laravel-53-homepage-1.png)
 
 ---
 
@@ -184,7 +181,7 @@ Route::get('/', function () {
 
   I mostrarà algu com:
 
-  ![Route list](imatgesApunts/laravel-route-list.png)
+  ![Route list](http://www.desarrolloweb.com/archivoimg/general/3369.png)
 
 Documentació: [Routes](https://laravel.com/docs/5.3/routing)
 
