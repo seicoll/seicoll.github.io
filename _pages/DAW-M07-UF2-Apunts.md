@@ -9,7 +9,7 @@ sidebar:
 
 {% include toc icon="columns" title="Menú " %}
 
-## Laravel
+## Què és Laravel
 
 * Laravel és un **framework PHP** orientat a objectes creat al 2005.
 * Utilitza el model **MVC** (Model Vista Controlador).
@@ -85,7 +85,7 @@ sidebar:
 * Memcached
 * Beanstalkd
 
-  Documentació [Laravel Homestead](https://laravel.com/docs/5.3/homestead)
+Documentació [Laravel Homestead](https://laravel.com/docs/5.3/homestead)
 
 ---
 
@@ -136,7 +136,9 @@ sidebar:
   `php artisan list`
 
 * Aquesta comanda ens llita tot el que podem fer amb artisan.
+
 ---
+
 ## Laravel: Rutes
 
 * Les **rutes** en Laravel són les responsables d'indic....................
@@ -182,8 +184,7 @@ Route::get('/', function () {
 
   ![Route list](imatgesApunts/laravel-route-list.png)
 
-   Documentació: [Routes](https://laravel.com/docs/5.3/routing)
-
+Documentació: [Routes](https://laravel.com/docs/5.3/routing)
 
 ### Rutes amb paràmetres
 ```php
@@ -202,9 +203,11 @@ També es poden enviar varis paràmetres:
    });
 ?>
 ```
+
 ### Paràmetres opcionals
 
 Podem definir rutes amb paràmetres opcionals com:
+
 ```
 example.com/categoria/php
 example.com/categoria/php/2
@@ -225,11 +228,14 @@ En Laravel, el paràmetres opcionals s'indiquen amb un interrogant **?**.
 ---
 
 ## Laravel: Estructura de carpetes
+
 Alguns dels arxius que tenim directament a la carperta arrel de Laravel són:
+
 * **.env**: És la definició de variables d'entorn.
 * **composer.json**: Conté la informació pel gestor de paquets Composer.
 
 Carpetes principals de Laravel:
+
 * **App**: Arxius d'aplicació (Controladors, middlewares, etc)
 * **Bootstrap**: Arxius del motor de Laravel. (No tocarem)
 * **Config**: Arxius de configuració (Bases de dades, mail, etc)
@@ -281,6 +287,7 @@ Carpetes principals de Laravel:
 });
 ?>
 ```
+
 * L'arxiu `resources/views/calendari.blade.php` seria:
 
 ```html
@@ -292,6 +299,7 @@ Carpetes principals de Laravel:
    </body>
 </html>
 ```
+
 Per mostrar dades en un arxiu blade, s'utilitzen les dobles claus {{ $data }}
 
 ---
