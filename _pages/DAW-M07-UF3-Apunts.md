@@ -1,5 +1,9 @@
-<!-- $theme: gaia -->
-<!-- *template: invert -->
+---
+title: "UF3. Accés a dades"
+permalink: /DAW-M07-UF3-Apunts/
+date: 2017-01-16T03:02:20+00:00
+---
+
 # M07. Desenvolupament web en entorn servidor
 ## UF3. Accés a dades
 ###### Autor: Sergi Coll

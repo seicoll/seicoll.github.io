@@ -1,8 +1,12 @@
-
+---
+title: "UF2. Laravel"
+permalink: /DAW-M07-UF2-Apunts/
+date: 2017-01-16T03:02:20+00:00
+---
 
 # M07. Desenvolupament web en entorn servidor
 ## UF2. Laravel
-Autor: Sergi Coll 
+Autor: Sergi Coll
 
 ---
 
