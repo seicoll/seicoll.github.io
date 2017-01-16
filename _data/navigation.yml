@@ -1,13 +1,13 @@
 # main links
 main:
-  - title: "DAW - M07. Desenvolupament web entorn servidor"
-    children:
+  #- title: "DAW - M07. Desenvolupament web entorn servidor"
+   # children:
       - title: "UF1. Desenvolupament web en entorn servidor"
-        url: /DAW_M07_UF1_Apunts/
+        url: /DAW-M07-UF1-Apunts/
        - title: "UF3. Accés a dades"
-         url: /DAW_M07_UF3_Apunts/
+         url: /DAW-M07-UF3-Apunts/
       - title: "UF2. Generació dinàmica de pàgines web - Laravel"
-        url: /DAW_M07_UF2_Apunts/
+        url: /DAW-M07-UF2-Apunts/
 
   # - title: "About"
   #   url: https://mmistakes.github.io/minimal-mistakes/about/
