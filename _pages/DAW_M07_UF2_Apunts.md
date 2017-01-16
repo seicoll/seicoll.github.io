@@ -2,7 +2,7 @@
 
 # M07. Desenvolupament web en entorn servidor
 ## UF2. Laravel
-Autor: Sergi Coll
+Autor: Sergi Coll 
 
 ---
 
