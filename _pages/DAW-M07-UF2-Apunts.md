@@ -35,7 +35,7 @@ sidebar:
 
 ## MVC: Funcionament
 
-![Model MCV](imatgesApunts/mvc.png)
+![Model MCV](https://i0.wp.com/www.magarrent.com/wp-content/uploads/2016/12/0-Selection_001.png?fit=964%2C519&ssl=1)
 
 1. L'**usuari** des del navegador accedeix una pàgina web.
 2. Accedim a una **ruta** (ex: /, /usuaris, /registre).
