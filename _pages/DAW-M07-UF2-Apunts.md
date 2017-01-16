@@ -47,7 +47,7 @@ sidebar:
 
 ---
 
-## Requiriments Laravel
+## Requiriments
 
 * PHP >= 5.6.4
 * OpenSSL PHP Extension
@@ -61,7 +61,6 @@ sidebar:
 ---
 
 ## Homestead
-
 
 * L'equip de Laravel ens ofereix una màquina virtual anomenda **Homestead**, per facilitar-tos la preparació de l'entorn de desenvolupament en Laravel.
 > **Homestead** és una "Box de Vagrant".
@@ -128,7 +127,8 @@ Documentació [Laravel Homestead](https://laravel.com/docs/5.3/homestead)
 
 ## Artisan
 
-* **Artisan** ens permet executar ordres des del terminal que ajuden a crear o modificar elements del nostre projecte en Laravel, com crear models, controladors, veure totes les rutes, etc ...
+* **Artisan** és la interfície de comandes (CLI) que ens ofereix Laravel.
+* **Artisan** permet al desenvolupador executar ordres des del terminal que ajuden a crear o modificar elements del nostre projecte en Laravel, com crear models, controladors, veure totes les rutes, etc ...
 
 * Per poder executar les ordres de **Artisan**, des del terminal anem fins a la carpeta del projecte i un cop allà executem:
 
@@ -140,14 +140,12 @@ Documentació [Laravel Homestead](https://laravel.com/docs/5.3/homestead)
 
 ## Rutes
 
-* Les **rutes** en Laravel són les responsables d'indic....................
+* Les **rutes** (o urls) disponibles en la nostra aplicació es defineixen al fitxer l'arxiu de rutes situat a `routes/web.php`.
 
-* Si nosaltres demanem la ruta **/tuits** volem que ens llisti tots els tuits.
-* Si volem el tuit 1, tindrem una ruta com per exemple **/tuit/1**.
+* Per exemple, si nosaltres demanem la ruta **/productes** volem que ens llisti tots els productes.
+* Si volem veure el producte 1, tindrem una ruta com per exemple **/producte/1**.
 
-* Tant les peticions GET com POST les podem gestionar amb les rutes i controladors.
-
-* Vegem l'arxiu de rutes situat a routes/web.php:
+* Vegem l'arxiu de rutes situat a `routes/web.php`:
 
 ```php
 <?php
@@ -175,7 +173,7 @@ Route::get('/', function () {
 * Quan cridem a la vista amb el mètode `view('welcome')` no cal posar-li l'extensió.
 * Aquesta vista conté el Blade de la pàgina que veiem quan anem a l'arrel del projecte.
 
-* Per veure les rutes que tenim definides podem utilizar la comanda Artisan:
+* Podem veure les rutes que tenim definides utilizant la comanda Artisan:
 
   `php artisan route:list`
 
@@ -186,6 +184,7 @@ Route::get('/', function () {
 Documentació: [Routes](https://laravel.com/docs/5.3/routing)
 
 ### Rutes amb paràmetres
+
 ```php
 <?php
    Route::get('inici/{nom}', function($nom){
@@ -195,6 +194,7 @@ Documentació: [Routes](https://laravel.com/docs/5.3/routing)
 ```
 
 També es poden enviar varis paràmetres:
+
 ```php
 <?php
    Route::get('agenda/{mes}/{any}', function($mes, $any){
@@ -235,7 +235,7 @@ Alguns dels arxius que tenim directament a la carperta arrel de Laravel són:
 
 Carpetes principals de Laravel:
 
-* **App**: Arxius d'aplicació (Controladors, middlewares, etc)
+* **App**: Arxius de l'aplicació (Controladors, Models, middlewares, etc)
 * **Bootstrap**: Arxius del motor de Laravel. (No tocarem)
 * **Config**: Arxius de configuració (Bases de dades, mail, etc)
 * **Database**: Arxius de Migracions i Seeds.
@@ -263,13 +263,13 @@ Carpetes principals de Laravel:
 
 * Podem invocar una vista des del sistema de routing fent:
 
-  ```php
+```php
    <?php
       Route::get('inici', function () {
           return view('inici');        //cridem la funció view passant el nom de la vista
       });
    ?>
-   ```
+```
 
 ### Passar dades una vista
 
