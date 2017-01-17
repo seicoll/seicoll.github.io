@@ -94,24 +94,26 @@ Documentació [Laravel Homestead](https://laravel.com/docs/5.3/homestead)
   1. Instal·la el gestor de paquets **[Composer](https://getcomposer.org/)** a la teva màquina.
   2. Instal·la **Laravel** seguint les indicacions de la [documentació](https://laravel.com/docs/5.3).
 
-    Primer es descarrega l'instal·lador de Laravel via Composer:
+   * **Via Laravel Installer**
 
-    `composer global require "laravel/installer"`
+      1. Primer es descarrega l'instal·lador de Laravel via Composer:
 
-    Laravel s'instal·la a $HOME/.composer però per poder executar les properes comandes necessitarem tenir $HOME/.composer/vendor/bin al nostre $PATH.
-    Inserta això al teu $HOME/.profile:
+         `composer global require "laravel/installer"`
 
-    `PATH=$PATH:~/.composer/vendor/bin`
+         Laravel s'instal·la a $HOME/.composer però per poder executar les properes comandes necessitarem tenir $HOME/.composer/vendor/bin al nostre $PATH.
+      2. Inserta això al teu $HOME/.profile:
 
-  3. Crea una app Laravel a la carpeta on guardaràs els teus projectes:
+         `PATH=$PATH:~/.composer/vendor/bin`
 
-    `$ laravel new laravelapp1`
+      3. Crea una app Laravel a la carpeta on guardaràs els teus projectes:
 
-    Ens crea un nou directori amb la instal·lació de Laravel i totes les seves dependències.
+         `$ laravel new laravelapp1`
 
-    o també:
+         Ens crea un nou directori amb la instal·lació de Laravel i totes les seves dependències.
 
-    `$ composer create-project --prefer-dist laravel/laravel laravelapp1`
+    * **Via Composer Create-Project**
+
+      `$ composer create-project --prefer-dist laravel/laravel laravelapp1`
 
   4. Arrenca l'aplicació de prova (inicia un petit servidor de desenvolupament):
 
@@ -263,6 +265,8 @@ Carpetes principals de Laravel:
 
     > És molt important l'extensió, si no no funcionarà.
 
+
+
 * Podem invocar una vista des del sistema de routing fent:
 
 ```php
@@ -307,6 +311,39 @@ Carpetes principals de Laravel:
 {% raw %}
 Per mostrar dades en un arxiu blade, s'utilitzen les dobles claus {{ $data }}
 {% endraw %}
+
+---
+
+## Models
+
+* Laravel inclou seu propi sistema **ORM** anomenat ***Eloquent*** que ens proporciona una manera d'interactuar amb la base de dades.
+
+> Un ORM (Object-Relational mapping) és un tècnica de programació per convertir dades entre un llenguatge de programació orientat a objectes i una base de dades relacional.
+
+* Per cada taula de la base de dades hem de definir el seu corresponent model que s'utilitzarà per interactuar des de codi amb la taula.
+
+* En Laravel, els **models** es guarden a la carpeta `app`.
+* Per definir un model que utilitzi ***Eloquent*** només cal crear una classe que heredi de la classe `Model`.
+
+
+```php
+<?php
+namespace App;
+
+use Illuminate\Database\Eloquent\Model;
+
+class Article extends Model
+{
+    //...
+}
+```
+
+Tot i així, és més fàcil i ràpid crear models utilitzant la comanda `make:model` de Artisan:
+
+`php artisan make:model Article`
+
+* En la instal·lació inicial de Laravel ja tenim definit un Model anomenat User al fitxer `app/User.php`.
+
 ---
 
 ## Controladors
@@ -350,9 +387,3 @@ Per mostrar dades en un arxiu blade, s'utilitzen les dobles claus {{ $data }}
 * Crear controladors és una tasca repetitiva en Laravel, per això existiex una comanda artisan per crear-los automàticament.
 
   `php artisan make:controller CategoriasController`
-
----
-
-## Models
-
-  http://desarrolloweb.com/articulos/introduccion-modelos-laravel.html
