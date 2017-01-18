@@ -254,19 +254,27 @@ Carpetes principals de Laravel:
 
 ## Vistes
 
-* Les **vistes** s'encarreguen de mostrar la inforació a l'usuari.
-* Les vistes consisteixen en uns arxius php que generen el codi HTML que s'envia al navegador.
+* Les **vistes** s'encarreguen de mostrar la informació a l'usuari.
+* Les **vistes** permeten separar la part de presentació de la lògica (controladors) i de la base de dades (models).
+* Per tant no tindran cap tipus de consulta a la base de dades ni processament de dades, simplement reben dades i les mostren com HTML.
+
+### Definir vistes
+
+* Les vistes consisteixen en uns arxius php (tindran extensió `.php`) que generen el codi HTML que s'envia al navegador.
 
 * En Laravel, les vistes es guarden a la carpeta **resources/views/**.
    * I aquí es poden organitzar en carpetes per cada secció de l'aplicació.
 
-* Laravel utilitza un sistema de plantilles anomenat **Blade**.
-  * Per això els arxius tenen l'extensió **.blade.php**.
+* Laravel utilitza un sistema de plantilles anomenat **Blade** per definir les plantilles.
 
-    > És molt important l'extensió, si no no funcionarà.
+  > **Blade** és un motor de plantilles que permet mostrar dades de variables amb facilitat, substituir seccions de les plantilles per altre contingut, herència entre plantilles, definició de layouts o plantilles base, etc.
 
+* Totes les plantilles Blade han de tenir l'extensió **.blade.php**.
+* És molt important l'extensió, si no no funcionarà.
 
+### Cridar una vista
 
+* Una vegada tenim feta una vista l'hem d'associar a una ruta per poder mostrar-la.
 * Podem invocar una vista des del sistema de routing fent:
 
 ```php
@@ -278,9 +286,21 @@ Carpetes principals de Laravel:
    ?>
 ```
 
+* Només cal posar el nom de la vista perquè Laravel ja sap que totes les vistes es troben `resources/views/`.
+* Si hem organitzat les vistes en carpetes dins de `resources/views/` podem referenciar les vistes amb la notació tipus ***'dot'*** on les barres que separen les carpetes es substitueixen per punts.
+* Per exemple, per referenciar la vista `resources/views/user/login.blade.php` utilitzariem el nom `user.login`:
+
+```php
+  Route::get('login', function()
+  {
+      return view('user.login');
+  });
+```
+
 ### Passar dades una vista
 
-* Podem passar dades a una vista a través d'un array associatiu.
+* Podem passar dades a una vista utilitzant el segon paràmetre del mètode `view`, el qual accepta un array associatiu.
+* En aquest array podem afegir totes les variables que vulguem utilitzar a la vista:
 
 ```php
  <?php
@@ -311,38 +331,6 @@ Carpetes principals de Laravel:
 {% raw %}
 Per mostrar dades en un arxiu blade, s'utilitzen les dobles claus {{ $data }}
 {% endraw %}
-
----
-
-## Models
-
-* Laravel inclou seu propi sistema **ORM** anomenat ***Eloquent*** que ens proporciona una manera d'interactuar amb la base de dades.
-
-> Un ORM (Object-Relational mapping) és un tècnica de programació per convertir dades entre un llenguatge de programació orientat a objectes i una base de dades relacional.
-
-* Per cada taula de la base de dades hem de definir el seu corresponent model que s'utilitzarà per interactuar des de codi amb la taula.
-
-* En Laravel, els **models** es guarden a la carpeta `app`.
-* Per definir un model que utilitzi ***Eloquent*** només cal crear una classe que heredi de la classe `Model`.
-
-
-```php
-<?php
-namespace App;
-
-use Illuminate\Database\Eloquent\Model;
-
-class Article extends Model
-{
-    //...
-}
-```
-
-Tot i així, és més fàcil i ràpid crear models utilitzant la comanda `make:model` de Artisan:
-
-`php artisan make:model Article`
-
-* En la instal·lació inicial de Laravel ja tenim definit un Model anomenat User al fitxer `app/User.php`.
 
 ---
 
@@ -387,3 +375,35 @@ Tot i així, és més fàcil i ràpid crear models utilitzant la comanda `make:m
 * Crear controladors és una tasca repetitiva en Laravel, per això existiex una comanda artisan per crear-los automàticament.
 
   `php artisan make:controller CategoriasController`
+
+---
+
+## Models
+
+* Laravel inclou seu propi sistema **ORM** anomenat ***Eloquent*** que ens proporciona una manera d'interactuar amb la base de dades.
+
+> Un **ORM (Object-Relational mapping)** és un tècnica de programació per convertir dades entre un llenguatge de programació orientat a objectes i una base de dades relacional.
+
+* Per cada taula de la base de dades hem de definir el seu corresponent model que s'utilitzarà per interactuar des de codi amb la taula.
+
+* En Laravel, els **models** es guarden a la carpeta `app`.
+* Per definir un model que utilitzi ***Eloquent*** només cal crear una classe que heredi de la classe `Model`.
+
+
+```php
+<?php
+namespace App;
+
+use Illuminate\Database\Eloquent\Model;
+
+class Article extends Model
+{
+    //...
+}
+```
+
+Tot i així, és més fàcil i ràpid crear models utilitzant la comanda `make:model` de Artisan:
+
+`php artisan make:model Article`
+
+* En la instal·lació inicial de Laravel ja tenim definit un Model anomenat User al fitxer `app/User.php`.
