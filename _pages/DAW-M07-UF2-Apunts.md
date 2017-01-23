@@ -304,11 +304,10 @@ Carpetes principals de Laravel:
 
 ```php
  <?php
- Route::get('/calendari', function () {
+ Route::get('/calendari/{mes}/{any}', function ($mes, $any) {
     view('calendari', [
        	'mes' => $mes,
-       	'any' => $any,
-       	'events' => $events
+       	'any' => $any
    ]);
 });
 ?>
@@ -336,8 +335,15 @@ Per mostrar dades en un arxiu blade, s'utilitzen les dobles claus {{ $data }}
 
 ## Controladors
 
-* En Laravel, els **controladors** es guarden a la carpeta `app/Http/Controllers`.
+* Fins ara hem vist com associar a un ruta una vista, però en general, la forma de treballar serà associar les rutes a un **mètode** d'un **controlador**.
+
+* Això ens permet separar millor el codi de l'aplicació i crear classes (controladors) que agrupen la funcionalitat d'un recurs.
+  * Per exemple, podem crear un controlador per gestionar la lògica associada al control d'articles o usuaris o qualsevol altre recurs.
+
+* En Laravel, els **controladors** es guarden en fitxers PHP a la carpeta `app/Http/Controllers`.
    * I aquí es poden organitzar en subcarpetes.
+   * Normalment, s'afegeix un sufig `Controller`, per exemple `UserController.php` o `ArticleController.php`.
+
 * Codi d'un controlador bàsic:
 
 ```php
@@ -356,6 +362,7 @@ Per mostrar dades en un arxiu blade, s'utilitzen les dobles claus {{ $data }}
    }
 ?>
 ```
+* Tots els controladors han d'extendre la classe base `Controller`.
 
 ### Cridar un controlador des del sistema de routing
 
@@ -368,13 +375,17 @@ Per mostrar dades en un arxiu blade, s'utilitzen les dobles claus {{ $data }}
 ?>
 ```
 
-* En aquest exemple, la ruta té un paràmetre que serà passat al mètode ver() del ArticulosController.
+* En aquest exemple, associem la ruta al mètode del controlador posant el **nom del controlador** seguit de **@** i del **nom del mètode** que volem associar.
+* La ruta té un paràmetre ***id*** que serà passat automàticament al mètode `ver()` del `ArticulosController`.
 
 ### Generar controladors automàticament amb artisan
 
-* Crear controladors és una tasca repetitiva en Laravel, per això existiex una comanda artisan per crear-los automàticament.
+* Crear controladors és una tasca repetitiva en Laravel, per això existeix una comanda artisan per crear-los automàticament.
 
   `php artisan make:controller CategoriasController`
+
+---
+## *Middlewares* o filtres
 
 ---
 
