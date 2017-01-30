@@ -391,13 +391,18 @@ Per mostrar dades en un arxiu blade, s'utilitzen les dobles claus {{ $data }}
 
 ## Models
 
-* Laravel inclou seu propi sistema **ORM** anomenat ***Eloquent*** que ens proporciona una manera d'interactuar amb la base de dades.
+* Els **models** ens permeten accedir a la base dades de la nostra aplicació.
+
+* Un **model** representa un objecte de la base de dades per exemple Usuaris.
+
+* Per cada taula de la base de dades hem de definir el seu corresponent **model** que s'utilitzarà per interactuar des de codi amb la taula.
+
+* Laravel inclou seu propi sistema **ORM** anomenat ***Eloquent*** que ens proporciona una manera fàcil d'interactuar amb la base de dades.
 
 > Un **ORM (Object-Relational mapping)** és un tècnica de programació per convertir dades entre un llenguatge de programació orientat a objectes i una base de dades relacional.
 
-* Per cada taula de la base de dades hem de definir el seu corresponent model que s'utilitzarà per interactuar des de codi amb la taula.
-
 * En Laravel, els **models** es guarden a la carpeta `app`.
+
 * Per definir un model que utilitzi ***Eloquent*** només cal crear una classe que heredi de la classe `Model`.
 
 
@@ -407,14 +412,64 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Article extends Model
+class User extends Model
 {
     //...
 }
 ```
 
-Tot i així, és més fàcil i ràpid crear models utilitzant la comanda `make:model` de Artisan:
+* I ja està, el cos de la classe pot estar buit ({ }), tot el demés es fa automàticament!
 
-`php artisan make:model Article`
+* Tot i així, és més fàcil i ràpid crear models utilitzant la comanda `make:model` de Artisan:
+
+`php artisan make:model User`
+
+* Un vegada creat el **model** ja el podem utilitzar per obtenir dades de la base de dades, inserir o actualitzar.
+
+* El lloc correcta on realitzar aquestes operacions és en el **controlador**.
+
+```php
+use App\User;              // Indiquem el espai de noms del model per poder-lo utilitzar
+
+$users = User::all();      // Obtenim totes les files de la taula en un array
+
+foreach( $users as $user ) {
+    echo $user->name;      // Accedim als camps de la taula com si fossin propietats del objecte
+}
+```
 
 * En la instal·lació inicial de Laravel ja tenim definit un Model anomenat User al fitxer `app/User.php`.
+
+
+## Query Builder (Constructor de consultes)
+
+*  ***Eloquent ORM*** ens proporciona una sèrie de classes i mètodes predefinits per realitzar **consultes** i altres tipus d'operacions amb la base de dades.
+
+* Al utilitzar aquestes classes, creem un notació més llegible i **compatible** amb els tipus de base de dades soportats per Laravel.
+
+* A més, ens preveu del **atacs per injecció de codi SQL**, utilitzant PDO parameter binding.
+
+* **Exemples de consultes:**
+
+`User::find(1)`
+
+*  Estem accedint al **mètode** `find` del model (que és una classe) **User**. Aquest mètode busca a la base de dades la clau que li passem per paràmetre, en aquest cas el usuari `id` 1.
+
+`User::where('name', 'Sergi')->first();`
+
+`User::where('name', 'Sergi')->get();`
+
+* El mètode `where` és per fer cerques a la base de dades en uns camps determinats.
+* El mètode `first` per obtenir el primer objecte.
+* El mèdode `get` per obtenir tots els objectes en un array.
+
+Més exemples:
+
+```php
+User::where(['name' => 'Sergi', 'email' => 'sergi@gmail.com']);
+User::insert(['name' => 'Sergi', 'email' => 'sergi@gmail.com']);
+User::where('id', 1)->update(['name' => 'sergi']);
+User::where(['name' => 'Sergi', 'email' => 'sergi@gmail.com'])->delete();
+```
+
+Més informació: [https://laravel.com/docs/5.1/queries](https://laravel.com/docs/5.1/queries)
